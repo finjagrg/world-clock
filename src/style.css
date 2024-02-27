@@ -7,7 +7,7 @@ body {
   background-color: #f7f7fc;
   max-width: 550px;
   padding: 20px 30px 0 30px;
-  margin: 50px;
+  margin: 70px;
   border-radius: 8px;
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
 }
@@ -49,5 +49,5 @@ select {
 }
 
 footer {
-  margin: 50px;
+  margin: 70px;
 }
