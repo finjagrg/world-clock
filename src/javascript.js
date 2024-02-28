@@ -1,23 +1,26 @@
 function updateTime() {
   let vancouverElement = document.querySelector("#vancouver");
-  let vancouverDateElement = vancouverElement.querySelector(".date");
-  let vancouverTimeElement = vancouverElement.querySelector(".time");
-  let vancouverTime = moment().tz("America/Vancouver");
+  if (vancouverElement) {
+    let vancouverDateElement = vancouverElement.querySelector(".date");
+    let vancouverTimeElement = vancouverElement.querySelector(".time");
+    let vancouverTime = moment().tz("America/Vancouver");
 
-  vancouverDateElement.innerHTML = vancouverTime.format("MMMM Do YYYY");
-  vancouverTimeElement.innerHTML = vancouverTime.format(
-    "HH:MM:ss [<small>]A[</small>]"
-  );
-
+    vancouverDateElement.innerHTML = vancouverTime.format("MMMM Do YYYY");
+    vancouverTimeElement.innerHTML = vancouverTime.format(
+      "HH:MM:ss [<small>]A[</small>]"
+    );
+  }
   let dubaiElement = document.querySelector("#dubai");
-  let dubaiDateElement = dubaiElement.querySelector(".date");
-  let dubaiTimeElement = dubaiElement.querySelector(".time");
-  let dubaiTime = moment().tz("Asia/Dubai");
+  if (dubaiElement) {
+    let dubaiDateElement = dubaiElement.querySelector(".date");
+    let dubaiTimeElement = dubaiElement.querySelector(".time");
+    let dubaiTime = moment().tz("Asia/Dubai");
 
-  dubaiDateElement.innerHTML = dubaiTime.format("MMMM Do YYYY");
-  dubaiTimeElement.innerHTML = dubaiTime.format(
-    "HH:MM:ss [<small>]A[</small>]"
-  );
+    dubaiDateElement.innerHTML = dubaiTime.format("MMMM Do YYYY");
+    dubaiTimeElement.innerHTML = dubaiTime.format(
+      "HH:MM:ss [<small>]A[</small>]"
+    );
+  }
 }
 function updateCity(event) {
   let cityTimezone = event.target.value;
@@ -34,7 +37,10 @@ function updateCity(event) {
           </div>
           <div class="time">${cityTime.format(
             "HH:MM:ss [<small>]A[</small>]"
-          )}></div>`;
+          )}></div>
+         <div>
+          <a href=index.html">All cities</a>
+          </div>`;
 }
 
 setInterval(updateTime, 1000);
