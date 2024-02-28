@@ -21,8 +21,11 @@ function updateTime() {
 }
 function updateCity(event) {
   let cityTimezone = event.target.value;
-  let cityName = cityTimezone.replace("-", " ").split("/")[1];
+  if (cityTimezone === "current") {
+    cityTimezone = moment.tz.guess();
+  }
   let cityTime = moment().tz(cityTimezone);
+  let cityName = cityTimezone.replace("-", " ").split("/")[1];
   let cities = document.querySelector("#city");
   cities.innerHTML = `<div class="city first" id="vancouver">
           <div>
